@@ -7,12 +7,15 @@ import org.junit.Test;
 import com.thoughtworks.selenium.DefaultSelenium;
 import com.thoughtworks.selenium.Selenium;
 
+@SuppressWarnings("deprecation")
 public class TestWebPage {
 
 	@Before
 	public void setup() {
-		
-		Selenium selenium = new DefaultSelenium("localhost", 4444, "*googlechrome*", "http://assignment4emerging.herokuapp.com/login");
+		//for IE = "internetexplorer" // for Firefox = "firefox"
+		//Root Portal - http://www.opensourcecms.com/
+		//Portal to test - http://demo.opensourcecms.com/wordpress/wp-login.php
+		Selenium selenium = new DefaultSelenium("localhost", 4444, "*googlechrome*", "http://demo.opensourcecms.com/");
 		selenium.start();
 	}
 
