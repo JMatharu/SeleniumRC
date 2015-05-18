@@ -33,7 +33,19 @@ public class TestWebPage {
 		selenium.type("id=user_login", "admin");
 		selenium.type("id=user_pass", "demo123");
 		selenium.click("id=wp-submit");
-		Thread.sleep(5000);
+		selenium.waitForPageToLoad("10000");
+		selenium.click("link=Posts");
+		selenium.waitForPageToLoad("10000");
+		selenium.click("link=Add New");
+		selenium.waitForPageToLoad("10000");
+		selenium.type("id=title", "New Jagdeep Blog Post!");
+		selenium.type("id=content",
+				"This is first Blog Post from Selenium RC Automatio Tool, by Jagdeep Matharu");
+		selenium.click("id=publish");
+		selenium.waitForPageToLoad("10000");
+		selenium.click("link=All Posts");
+		Thread.sleep(10000);
+
 	}
 
 	@After
