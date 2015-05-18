@@ -14,10 +14,10 @@ public class TestWordPressMultiTest {
 	// In this test you will create as many test cases and "Before" and "After"
 	// scenario will run just one
 
-	Selenium selenium;
+	static Selenium selenium;
 
 	@BeforeClass
-	public void setup() {
+	public static void setup() {
 		selenium = new DefaultSelenium("localhost", 4444, "*googlechrome",
 				"http://demo.opensourcecms.com/");
 		selenium.start();
@@ -42,7 +42,7 @@ public class TestWordPressMultiTest {
 	}
 
 	@AfterClass
-	public void done() {
+	public static void done() {
 		selenium.stop();
 	}
 
