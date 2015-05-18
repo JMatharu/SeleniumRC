@@ -29,7 +29,8 @@ public class TestWordPressMultiTest {
 		selenium.type("id=user_login", "admin");
 		selenium.type("id=user_pass", "demo123");
 		selenium.click("id=wp-submit");
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
+		selenium.waitForPageToLoad("10000");
 	}
 
 	@Test
@@ -38,7 +39,8 @@ public class TestWordPressMultiTest {
 		selenium.type("id=user_login", "admin");
 		selenium.type("id=user_pass", "demo123");
 		selenium.click("id=wp-submit");
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
+		selenium.waitForPageToLoad("100000");
 	}
 
 	@AfterClass
