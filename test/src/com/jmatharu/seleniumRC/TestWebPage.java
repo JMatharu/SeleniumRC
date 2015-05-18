@@ -12,11 +12,13 @@ public class TestWebPage {
 	Selenium selenium;
 
 	@Before
-	public void setup() throws InterruptedException {
+	public void setup() {
 		// for IE = "internetexplorer" // for Firefox = "firefox"
 		// Root Portal - http://www.opensourcecms.com/
-		//Portal Details and Credentials - http://www.opensourcecms.com/scripts/details.php?scriptid=88&name=WordPress
-		// Portal to test - http://demo.opensourcecms.com/wordpress/wp-login.php;
+		// Portal Details and Credentials -
+		// http://www.opensourcecms.com/scripts/details.php?scriptid=88&name=WordPress
+		// Portal to test -
+		// http://demo.opensourcecms.com/wordpress/wp-login.php;
 		// in which "http://demo.opensourcecms.com" is domain
 		// and
 		// "wordpress/wp-login.php" is Location where I need to go.
@@ -26,11 +28,12 @@ public class TestWebPage {
 	}
 
 	@Test
-	public void loginWordPress() {
+	public void loginWordPress() throws InterruptedException {
 		selenium.open("wordpress/wp-login.php");
 		selenium.type("id=user_login", "admin");
 		selenium.type("id=user_pass", "demo123");
 		selenium.click("id=wp-submit");
+		Thread.sleep(5000);
 	}
 
 	@After
