@@ -9,6 +9,7 @@ import com.thoughtworks.selenium.Selenium;
 
 @SuppressWarnings("deprecation")
 public class TestWebPage {
+
 	Selenium selenium;
 
 	@Before
