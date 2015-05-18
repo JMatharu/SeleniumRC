@@ -9,13 +9,15 @@ import com.thoughtworks.selenium.Selenium;
 
 @SuppressWarnings("deprecation")
 public class TestWebPage {
+	Selenium selenium;
 
 	@Before
 	public void setup() {
-		//for IE = "internetexplorer" // for Firefox = "firefox"
-		//Root Portal - http://www.opensourcecms.com/
-		//Portal to test - http://demo.opensourcecms.com/wordpress/wp-login.php
-		Selenium selenium = new DefaultSelenium("localhost", 4444, "*googlechrome*", "http://demo.opensourcecms.com/");
+		// for IE = "internetexplorer" // for Firefox = "firefox"
+		// Root Portal - http://www.opensourcecms.com/
+		// Portal to test - http://demo.opensourcecms.com/wordpress/wp-login.php
+		selenium = new DefaultSelenium("localhost", 4444, "*googlechrome*",
+				"http://demo.opensourcecms.com/");
 		selenium.start();
 	}
 
@@ -26,7 +28,6 @@ public class TestWebPage {
 
 	@After
 	public void done() {
-
+		selenium.stop();
 	}
-
 }
